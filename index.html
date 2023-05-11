@@ -1,0 +1,36 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>2D OpenAPI 샘플</title>
+    <SCRIPT language="JavaScript" type="text/javascript" src="http://map.vworld.kr/js/vworldMapInit.js.do?apiKey=D1EA8B1F-8A08-3D67-A539-B2C9D1DDB955"></SCRIPT>
+    <script type="text/javascript">
+    var map = null;
+    vworld.showMode = false;
+    vworld.init(
+    "cont1"
+    , "map-first"
+    ,function() {
+    map = this.vmap;
+    map.setBaseLayer(map.vworldBaseMap);
+    map.setControlsType({"simpleMap":true});
+    map.setCenterAndZoom(14135792.751626197, 4512051.278263237, 12);
+    }
+    ,function (obj){SOPPlugin = obj; }
+    ,function (msg){alert('oh my god');}
+    );
+    function setModeCallback(){
+    vworld.setModeCallback(modecallback);
+    }
+    </script> 
+    
+</head>
+<body>
+
+    <div id="cont1" style="width:900px;height:750px;"></div>
+<button type="button" onclick="javascript:vworld.setMode(0);" name="mode0" >2D배경지도</button>
+<button type="button" onclick="javascript:vworld.setMode(1);" name="mode1" >2D항공사진</button>
+ </body>
+</html>
+ 
